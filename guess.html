@@ -1,0 +1,47 @@
+<html>
+<head>guess the number</head>
+<body onload="rand()"><br>
+	<div style="margin-right: ">
+
+	<li>Guess any number between 1 and 100</li>
+	<li>Guess the correct  number with less try</li>
+	<input type=text id='input'></input>
+	<input type="button" onclick="logic()" value='check'></button>
+	<h2 id='result' style="color:blue"></h2>
+	<h3 id='info' style="color: red"></h3>
+	<h4 id='num' ></h4>
+</div>
+	<script>
+		function rand(){
+			rand=Math.floor(Math.random()*100);
+			arr=[];
+			return rand;
+
+		}
+	function logic(){
+		var num;
+		num=document.getElementById("input").value;
+		
+		arr.push(num);
+		
+		document.getElementById("num").innerHTML=arr;
+		if(num==rand){
+			document.getElementById("result").innerHTML='Congrats.right guess '+'the number is '+rand;
+			document.getElementById("info").innerHTML='';
+		}
+		else if(num<rand){
+			document.getElementById("info").innerHTML='value too low';
+			document.getElementById("result").innerHTML='';
+
+		}
+		else{
+			document.getElementById("info").innerHTML='value too high';
+			document.getElementById("result").innerHTML='';
+
+		}
+		document.getElementById("input").value='';
+
+}</script>
+
+
+	</html>
